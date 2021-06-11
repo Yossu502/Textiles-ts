@@ -261,7 +261,7 @@ public class inicioSesion extends javax.swing.JFrame {
         boolean resultado = false;
         try {
             Connection con1 = null;
-            ConexionDB conect1 = new ConexionDB();
+            ConexionDB conect1 = ConexionDB.InstanciaSingleton();
             con1 = conect1.conectarMySQL();
             String sql = "SELECT `user`, `password` FROM `prueba`.`usuarios` WHERE  `user`="+"'"+user+"'" +" AND `password`="+"'"+pass+"'";
             Statement st = con1.createStatement();
